@@ -47,4 +47,10 @@ public class HelloWorldController {
 	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
 		return new HelloWorldBean(String.format("Hello World, %s", name));
 	}
+	
+	@GetMapping(path = "/getUsers") 
+	public HelloWorldBean getUsers(@RequestBody HelloWorldBean bean) {
+		return new HelloWorldBean(String.format("Hello World, %s", bean));
+	}
+	
 }
