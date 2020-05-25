@@ -50,6 +50,7 @@ public class HelloWorldController {
 	
 	@GetMapping(path = "/getUsers") 
 	public HelloWorldBean getUsers(@RequestBody HelloWorldBean bean) {
+		System.out.println("getUsers ===> ");
 		return new HelloWorldBean(String.format("Hello World, %s", bean));
 	}
 	
