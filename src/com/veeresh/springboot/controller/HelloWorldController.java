@@ -43,8 +43,14 @@ public class HelloWorldController {
 		return new ResponseEntity<>(bean.getMessage(), HttpStatus.OK);
 	}
 	
-	@GetMapping(path = "/hello-world/path-variable/{name}")
+	@GetMapping(path = "/hello-world/path-variable/{name}") 
 	public HelloWorldBean helloWorldPathVariable(@PathVariable String name) {
 		return new HelloWorldBean(String.format("Hello World, %s", name));
 	}
+	
+	@GetMapping(path = "/getUsers") 
+	public HelloWorldBean getUsers(@RequestBody HelloWorldBean bean) {
+		return new HelloWorldBean(String.format("Hello World, %s", bean));
+	}
+	
 }
